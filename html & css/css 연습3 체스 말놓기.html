@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv="X-UA-Comaptible" content="IE=edge">
+        <meta name="viewport" content  ="width=device-widt, initial-scale=1.0">
+        <title> Document </title>
+    <style>
+        /* 자손 결합자 */
+        /* div 하위의 모든 p요소 */
+        div p {
+            color:blue;
+            /* text-indent: 30px; */
+        }
+        /* 자식 결합자 */
+        /* div 하위의 바로 아래 p 요소 */
+        div > p {
+            color: crimson;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div>
+        <p>자식</p>
+        <t>
+            <p style="text-indent: 50px">자손</p>
+        </t>
+        <p>자식</p>
+        </div>
+    </body>
+</html>
