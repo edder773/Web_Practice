@@ -1,0 +1,146 @@
+h1 {
+    margin-bottom : 0;
+    font-size : 25px;
+}
+
+.basic-container {
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #ccc;
+}
+
+.flex-item {
+    width : 50px;
+    text-align : center;
+    background-color: white;
+    border : 3px solid black;
+    margin : 10px;
+    padding: 15px;
+}
+
+.flex-container{
+    display : flex;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #ccc;
+}
+
+.direction-row{
+    flex-direction: row;
+}
+
+.direction-row-r{
+    flex-direction: row-reverse;
+}
+
+.direction-column{
+    flex-direction: column;
+}
+
+.direction-column-r{
+    flex-direction: column-reverse;
+}
+
+.start{
+    justify-content: start;
+}
+
+.center{
+    justify-content: center;
+}
+
+.end{
+    justify-content: end;
+}
+
+.between{
+    justify-content: space-between;
+}
+
+.around{
+    /* item 사이에 동일한 여백을 적용 */
+    /* 양 끝에는 item 사이 여백의 1/2 */
+    justify-content: space-around;
+}
+
+.evenly{
+    /* 모든 item 사이와 양 끝 공백이 동일 */
+    justify-content: space-evenly;
+}
+
+.first{
+    height: 100px;
+}
+
+.second{
+    height: 50px;
+}
+
+.third{
+    height: 20px;
+}
+
+.center{
+    align-items: center;
+}
+
+/* wrap은 줄바꿈 설정 */
+
+.nowrap{
+    flex-wrap: nowrap;
+}
+
+.wrap{
+    flex-wrap :wrap;
+}
+
+.wrap-r{
+    flex-wrap: wrap-reverse;
+}
+
+/* grow는 특정 비율로 확대하는 기능 */
+/* 1이상의 숫자를 넣으면 유연하게 늘어남 */
+/* 비율을 너무 극단적으로 사용 x */
+/* 자식 요소의 inline 크기보다 작게 사용 x */
+.grow1{
+    flex-grow: 0;
+}
+
+.grow2{
+    flex-grow: 1;
+}
+
+.grow3{
+    flex-grow: 2;
+}
+
+.shrink1{
+    flex-shrink: 0;
+}
+
+.shrink2{
+    flex-shrink: 1;
+}
+
+.shrink3{
+    flex-shrink: 2;
+}
+/* flex 아이템의 기본 크기를 설정 */
+/* 기준축을 기준으로 크기를 지정 */
+.basis{
+    flex-basis: 100px;
+}
+
+/* flex에 배치될 아이템의 순서를 결정 */
+/* 숫자가 작을수록 앞 쪽에 배치 */
+.order1{
+    order : 2
+}
+
+.order2{
+    order : 3
+}
+
+.order3{
+    order : 1
+}
