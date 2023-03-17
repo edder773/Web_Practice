@@ -1,0 +1,38 @@
+.explane{
+    background : rgb(157, 210, 218);
+    height : 60px;
+    width : 100%;
+}
+.item {
+    height: 250px;
+    text-align: center;
+    border : 1px skyblue solid;
+}
+
+.develop{
+    background: blanchedalmond;
+}
+
+.size{
+    width : 40%;
+    height: 50%;
+}
+
+.cover{
+    background-image: url(cover.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: auto;
+    height: auto;
+}
+
+#box {
+    background-image: url(post.PNG);
+    background-repeat:no-repeat;
+    position : relative;
+    width: auto;
+    height: auto;
+}
+
+

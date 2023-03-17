@@ -1,0 +1,8 @@
+.cover{
+    background-image: url(2.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: auto;
+    height: auto;
+}
