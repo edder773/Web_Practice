@@ -3,11 +3,17 @@
 {% block content %}
 <h1>글 목록</h1>
 
-<hr />
+<hr>
 
 {% for article in articles %}
 <p>글 번호 : {{article.id}}</p>
-<p> 글 제목 : {{article.title}}</p>
+<p>글 제목 : {{article.title}}</p>
 <p>글 내용 : {{article.content}}</p>
-<hr />
+<a href="{% url 'articles:read' article.pk %}">상세내용</a>
+<form action="{% url 'articles:read' article.pk %}" method="POST" >
+    {% csrf_token %}
+    <input type="submit" value="삭제하기" >
+</form>
+
+<hr>
 {% endfor %} {% endblock content %}
