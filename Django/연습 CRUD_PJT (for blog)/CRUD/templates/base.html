@@ -10,6 +10,14 @@
 <body>
     {% include '_navbar.html' %}
     
+    <a href="{% url 'accounts:login' %}">로그인</a>
+    <a href="{% url 'accounts:logout' %}" method = "POST">로그아웃</a>
+    <a href="{% url 'accounts:signup' %}">회원가입</a>
+    <a href="{% url 'accounts:unregister'%}" method = "POST">회원탈퇴</a>
+    <a href="{% url 'accounts:update'%}">정보수정</a>
+    <a href="{% url 'accounts:password_change'%}">비밀번호변경</a>
+    <p>안녕하세요 {{user}}님! </p>
+
     {% block content %}
     
     {% endblock content %}
