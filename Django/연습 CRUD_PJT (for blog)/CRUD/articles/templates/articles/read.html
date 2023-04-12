@@ -12,8 +12,29 @@
 {% endif %}
 
 <hr>
+<h3>댓글</h3>
+{{ comment|length}}개의 댓글이 있습니다.
+<ul>
+    {% for comments in comment %}
+        <li> {{comments.content}} 
+        <form action="{% url 'articles:comment_delete' article.pk comments.pk %}" method = "POST">
+            {% csrf_token %}
+            <input type="submit" value="삭제">
+        </form>
+        </li>
+    {%empty%}
+    <p>댓글이 없습니다.</p>
+    {% endfor %}
+</ul>
+<form action="{% url 'articles:comment_create' article.pk %}" method = "POST">
+    {% csrf_token %}
+    {{ commentform }}
+    <input type="submit" value="댓글등록">
+</form>
 <a href="{% url 'articles:index' %}">돌아가기</a>
+{% if request.user == article.user %}
 <a href="{% url 'articles:update' article.pk %}">수정하기</a>
+{% endif %}
 
 {% endblock content %}
     

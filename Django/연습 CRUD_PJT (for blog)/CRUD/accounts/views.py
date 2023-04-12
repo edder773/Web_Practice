@@ -27,7 +27,7 @@ def signup(request):
             form.save()
         return redirect('articles:index')
     else:
-        # form = CustomedUserCreationForm()
+        form = CustomedUserCreationForm()
     content = {'form' : form}
     return render(request, 'accounts/signup.html',content)
 

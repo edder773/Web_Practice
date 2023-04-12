@@ -6,14 +6,18 @@
 <hr>
 
 {% for article in articles %}
+<p>작성자 : {{article.user}}</p>
 <p>글 번호 : {{article.id}}</p>
 <p>글 제목 : {{article.title}}</p>
 <p>글 내용 : {{article.content}}</p>
 <a href="{% url 'articles:read' article.pk %}">상세내용</a>
+
+{% if request.user == article.user %}
 <form action="{% url 'articles:read' article.pk %}" method="POST" >
     {% csrf_token %}
     <input type="submit" value="삭제하기" >
 </form>
+{% endif %}
 
 <hr>
 {% endfor %} {% endblock content %}
