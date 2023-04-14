@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>DETAIL</h1>
+<hr>
+<p>{{movie.title}}
+<p>{{movie.description}}
+<br>
+{% if user.is_authenticated %}
+<a href="{% url 'movies:update' movie.pk %}">UPDATE</a>
+<form action="{% url 'movies:delete' movie.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="DELETE">
+</form>
+{% endif %}
+<a href="{% url 'movies:index' %}">BACK</a>
+
+{% endblock content %}
