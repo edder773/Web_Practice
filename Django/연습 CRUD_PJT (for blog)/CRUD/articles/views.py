@@ -51,15 +51,23 @@ def update(request, pk):
         return redirect('articles:index')
 
 def comment_create(request,pk):
-    article = Article.objects.get(pk=pk)
-    commentform = CommentForm(request.POST)
-    if commentform.is_valid():
-        comment = commentform.save(commit=False)
-        comment.article = article
-        comment.save()
-    return redirect('articles:read', article.pk)
+    if request.user.is_authenticated:
+        article = Article.objects.get(pk=pk)
+        commentform = CommentForm(request.POST)
+        if commentform.is_valid():
+            comment = commentform.save(commit=False)
+            comment.article = article
+            comment.user = request.user
+            comment.save()
+        return redirect('articles:read', article.pk)
+    else :
+        return redirect('accounts:login')
 
 def comment_delete(request, article_pk, comment_pk):
-    comment = Comment.objects.get(pk=comment_pk)
-    comment.delete()
-    return redirect('articles:read', article_pk)
+    if request.user.is_authenticated:
+        comment = Comment.objects.get(pk=comment_pk)
+        if request.user == comment.user:
+            comment.delete()
+        return redirect('articles:read', article_pk)
+    else :
+        return redirect('accounts:login')
